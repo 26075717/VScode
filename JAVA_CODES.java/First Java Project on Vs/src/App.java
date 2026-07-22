@@ -9,11 +9,11 @@ public class App {
       System.out.println("\n\t\tHello!!!\n");
       System.out.println("////////////////////////////////////////");
       System.out.println("////////////////////////////////////////");
-      System.out.println("\n\tWelcome to the Pet finder.\n\tA place to find your lost pet.\n");
+      System.out.println("\n\n\tWelcome to the Pet finder.\n\tA place to find your lost pet.\n");
       System.out.println("////////////////////////////////////////");
       System.out.println("***************************************");
       while(true){
-        System.out.println("Pet Types: \n1) DOG.\n2)CAT.\n3)FISH.\n4)OTHERS");
+        System.out.println("Pet Types: \n1) DOG.\n2) CAT.\n3) FISH.\n4) OTHERS\n5) EXIT");
         System.out.print("\nWhat is your pet type?: ");
         yus=gh.nextLine();
         
@@ -72,16 +72,36 @@ public class App {
          System.out.println("\n////////////////////////////////////////\n");
 
 
-         }}
+        break; }
 
-      
-     
+       else if(yus.equalsIgnoreCase("Exit")|| yus.equals("5") ){
+         System.out.println("\n////////////////////////////////////////\n");
+          System.out.println("\tYou left!!!");
+          System.out.println("\n////////////////////////////////////////\n");
+
+        break; }
         
+        else{
+          System.out.println("\n////////////////////////////////////////\n");
+          System.out.println("PLEASE CHOOSE FROM THE GIVEN OPTION!!!"); 
+          System.out.println("\n////////////////////////////////////////");
+
+          continue;
+        }
+        
+        
+
+      }
+     
+    }
           Jaber fh =new Jaber();
           fh.ghe();
-  
-        }
-          gh.close();
-}
+           gh.close();
+      }
 
-}
+      
+        }
+         
+
+
+
