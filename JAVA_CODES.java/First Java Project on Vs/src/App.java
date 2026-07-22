@@ -56,6 +56,8 @@ public class App {
          }
 
          else if(yus.equalsIgnoreCase("other")|| yus.equals("4")|| yus.equalsIgnoreCase("others") ){
+
+         System.out.println("\n////////////////////////////////////////\n");
          System.out.println("What is your pet type? ");
          String hd = gh.nextLine();
          System.out.println("\n////////////////////////////////////////\n");
@@ -64,18 +66,22 @@ public class App {
          System.out.println("\n////////////////////////////////////////\n");
          System.out.println("What is your "+hd+ " name? ");
          String ks = gh.next();
-        System.out.println("\n////////////////////////////////////////");
-        System.out.println("When did you notice "+ks+" was missing? ");
-        String ksf = gh.nextLine();
-        System.out.println("\n////////////////////////////////////////");
+         System.out.println("\n////////////////////////////////////////\n");
+         System.out.println("When did you notice "+ks+" was missing? ");
+         String ksif = gh.nextLine();
+         System.out.println("\n////////////////////////////////////////\n");
 
 
          }}
 
       
      
-          gh.close();
+        
           Jaber fh =new Jaber();
           fh.ghe();
-    }
+  
+        }
+          gh.close();
+}
+
 }
