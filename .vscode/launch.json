@@ -5,6 +5,13 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "type": "java",
+            "name": "App",
+            "request": "launch",
+            "mainClass": "App",
+            "projectName": "VScode_c6250543"
+        },
+        {
             "type": "jdk",
             "request": "launch",
             "name": "Launch Java App"
