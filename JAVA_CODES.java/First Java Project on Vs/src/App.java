@@ -61,18 +61,73 @@ public class App {
          System.out.println("What is your pet type? ");
          String hd = gh.nextLine();
          System.out.println("\n////////////////////////////////////////\n");
-         System.out.print("\nHow old is your "+hd+": ");
+         System.out.print("How old is your "+hd+": ");
          String slk = gh.nextLine();
          System.out.println("\n////////////////////////////////////////\n");
          System.out.println("What is your "+hd+ " name? ");
-         String ks = gh.next();
+         String ks = gh.nextLine();
          System.out.println("\n////////////////////////////////////////\n");
          System.out.println("When did you notice "+ks+" was missing? ");
-         String ksif = gh.nextLine();
+         String tiod = gh.nextLine();
          System.out.println("\n////////////////////////////////////////\n");
+         String jui =  "So you have a pet "+hd+ " which is named "+ks+" aged "+slk+ ". \nAnd you noticed it was missings since "+tiod;    
+        
+         System.out.println(jui);
+         System.out.println("Is this the case?\n (yes) or (no)");
+         String sldf = gh.nextLine();
+         if (sldf.equalsIgnoreCase("yes")){
+          System.out.println("\nYOUR REPORT HAS BEEN MADE SUCCESSFULLY!!!");
 
+          break;
+         }
+         else if(sldf.equalsIgnoreCase("no")){
+          
+          System.out.println("UPDATE YOUR STORY!!!\n");
 
-        break; }
+          while (true){
+                  System.out.println(jui);
+                  System.out.println("What would you like to change?\n1) Pet Type? \n2) How old The Pet is? \n3) Pet Name? \n4) When Pet was Missing? \n5) No need to change the Story ");
+                  System.out.print("Enter your Choice: ");
+                  String ldfv = gh.nextLine();
+              switch (ldfv) {
+           case "1": System.out.print("Enter your pet type: ");
+                      String vsd = gh.nextLine();
+                     hd = vsd;
+                     System.out.println("Your pet type is "+hd);
+              break;
+              case "2": System.out.print("Enter your pet age: ");
+                        String vsid = gh.nextLine();
+                        slk = vsid;
+                        System.out.println("Your pet age is "+slk);
+             break;
+             case "3": System.out.print("Enter your pet name: ");
+                        String vrid = gh.nextLine();
+                        ks = vrid;
+                        System.out.println("Your pet type is "+ks);
+              break;
+               case "4": System.out.print("Enter when it was missing: ");
+                        String vid = gh.nextLine();
+                        tiod = vid;
+                        System.out.println("Your pet type is "+tiod);
+                break;
+               case "5": System.out.print("The is no need to change the story.");
+                        
+                        System.out.println("\nSO THE STORY REMAINS \n"+jui);
+              break;
+            default: System.out.println("PLEASE SELECT THE FROM THE GIVEN OPTIONS");
+             continue;} break;
+}
+
+  continue;}
+           else {
+            System.out.println("\n////////////////////////////////////////");
+            System.out.println("////////////////////////////////////////\n");
+            System.out.println("PLEASE CHOSE YES OR NO ");
+            System.out.println("\n////////////////////////////////////////\n");
+            continue;}
+            
+
+ }
 
        else if(yus.equalsIgnoreCase("Exit")|| yus.equals("5") ){
          System.out.println("\n////////////////////////////////////////\n");
