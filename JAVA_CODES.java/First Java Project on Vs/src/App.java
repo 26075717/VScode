@@ -91,17 +91,19 @@ public class App {
                   String ldfv = gh.nextLine();
 
               switch (ldfv) {
-           case "1": System.out.print("Enter your pet type: ");
+           case "1": 
+                      while(true){
+                     System.out.print("Enter your pet type: ");
                       String vsd = gh.nextLine();
                      hd = vsd;
                      System.out.println("Your pet type is "+hd);
-                     System.out.println("\nYour new story is: \n");
+                     System.out.println("\nYour new story is: ");
                      System.out.println(jui);
                      System.out.println("\nWOULD YOU LIKE TO CHANGE?\n(yes) or(no)");
                      String vtd = gh.nextLine();
                       if (vtd.equalsIgnoreCase("yes")){continue;}
                       else if(vtd.equalsIgnoreCase("no")){break;}
-                      else{System.out.println("Please enter from the given option.");}
+                      else{System.out.println("Please enter from the given option.");}}
               break;
               case "2": System.out.print("Enter your pet age: ");
                         String vsid = gh.nextLine();
