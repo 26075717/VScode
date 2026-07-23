@@ -89,26 +89,43 @@ public class App {
                   System.out.println("What would you like to change?\n1) Pet Type? \n2) How old The Pet is? \n3) Pet Name? \n4) When Pet was Missing? \n5) No need to change the Story ");
                   System.out.print("Enter your Choice: ");
                   String ldfv = gh.nextLine();
+
               switch (ldfv) {
            case "1": System.out.print("Enter your pet type: ");
                       String vsd = gh.nextLine();
                      hd = vsd;
                      System.out.println("Your pet type is "+hd);
+                     System.out.println("\nYour new story is: \n");
+                     System.out.println(jui);
+                     System.out.println("\nWOULD YOU LIKE TO CHANGE?\n(yes) or(no)");
+                     String vtd = gh.nextLine();
+                      if (vtd.equalsIgnoreCase("yes")){continue;}
+                      else if(vtd.equalsIgnoreCase("no")){break;}
+                      else{System.out.println("Please enter from the given option.");}
               break;
               case "2": System.out.print("Enter your pet age: ");
                         String vsid = gh.nextLine();
                         slk = vsid;
                         System.out.println("Your pet age is "+slk);
+                       System.out.println("\nYour new story is: \n");
+                       System.out.println(jui);
+
              break;
              case "3": System.out.print("Enter your pet name: ");
                         String vrid = gh.nextLine();
                         ks = vrid;
                         System.out.println("Your pet type is "+ks);
+                         System.out.println("\nYour new story is: \n");
+                         System.out.println(jui);
+
               break;
                case "4": System.out.print("Enter when it was missing: ");
                         String vid = gh.nextLine();
                         tiod = vid;
                         System.out.println("Your pet type is "+tiod);
+                        System.out.println("\nYour new story is: \n");
+                       System.out.println(jui);
+
                 break;
                case "5": System.out.print("The is no need to change the story.");
                         
