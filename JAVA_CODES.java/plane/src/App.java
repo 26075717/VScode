@@ -23,24 +23,28 @@ public class App {
         Ser.setBounds(4,0,960,580);
         Ser.setBackground(new Color(0,100,0));
         Ser.setOpaque(true);
-        Ser.setVisible(true);
+        Ser.setVisible(false);
 
 
                   // buttons
         THY1.setBounds(323,367,129,80);
         THY2.setBounds(523,600,100,50);
         THY3.setBounds(723,367,129,80);
+
         THY1.setText("START");
         THY1.addActionListener(e->{
           Back0.setVisible(false);
-
+         Ser.setVisible(true);
+         THY2.setVisible(true);
+         
         });
-
-
-
-        THY2.setText("EXIT");
+        
+        
+        
+        THY2.setText("BACK");
         THY2.addActionListener(e->{
           Back0.setVisible(true);
+          THY2.setVisible(false);
 
 
         });
@@ -48,8 +52,8 @@ public class App {
 
         THY3.setText("EXIT");
         THY3.addActionListener(e->{
-          Bases.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-          Bases.setVisible(false);
+        
+          Bases.dispose();
 
 
         });
