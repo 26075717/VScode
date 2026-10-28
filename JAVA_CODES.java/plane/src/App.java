@@ -12,6 +12,7 @@ import javax.swing.JLabel;
 public class App {
   static String [] bn = {"drt","weg","gwf"};
   static JComboBox ghd = new JComboBox(bn);
+  static JComboBox ehyd = new JComboBox();
   static JButton THY2 = new JButton();
   static JButton THY1 = new JButton();
   static JButton THY3 = new JButton();
@@ -32,9 +33,13 @@ public class App {
         Ser.setBackground(new Color(0,100,0));
         Ser.setOpaque(true);
         Ser.setVisible(false);
-
-
         ghd.setVisible(false);
+        ghd.setBackground(Color.GREEN);
+
+        ghd.addActionListener(e->{
+            Back0.setVisible(true);
+             THY2.setVisible(false);
+        });
     
         ghd.setBounds(220,0,80,40);
                   // buttons
