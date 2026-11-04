@@ -118,7 +118,7 @@ while(run){
             new_Place--;
         }std::cout<<"Your are now on step: "<<new_Place<<'\n';
     break;
-    case 23: std::cout<<"NICE!!! YOU RAISE,"<<new_Place+19<<'\n';
+    case 23: std::cout<<"NICE!!! YOU RAISE,"<<new_Place+16<<'\n';
     for(int i =1; i<=16;i++){
             new_Place++;
         }std::cout<<"Your are now on step: "<<new_Place<<'\n';
