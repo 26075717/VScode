@@ -5,6 +5,7 @@ double f=0;
 int a=0,b=0,c=0,d=0,e=0;
 int set_steps =0, playerPosition =0, playerRolls =0, numdic =0 , Position_Lock=0,Place;
 bool run=true;
+  int doors = 0;
 int newplayerPosition=0;
 int trapBeingsat =0;
 
@@ -16,6 +17,16 @@ std:: string choice;
     std::cout<<"||                                                                           ||"<<'\n';
     std::cout<<"||\tYou are now on step: "<<Place<<'\n';
     
+          if(trapBeingsat<=Place && doors<1){
+      std::cout<<"||                                                                           ||"<<'\n';
+      std::cout<<"||\t\t\tDoors has started showing " <<'\n';
+      std::cout<<"||                                                                           ||"<<'\n';
+      std::cout<<"||                                                                           ||"<<'\n';
+                                                                             
+             doors=20; 
+    }
+ 
+    
     int outof100 =0;
     int up_down=0;
     int rolled = (rand()%6)+1;//delet later
@@ -25,7 +36,7 @@ std:: string choice;
     int obstacle_b = (rand()%15)+1;
     std::cout<<"||                                                                           ||"<<'\n';
     if(trapBeingsat < Place){a=-3;b=-5;c=-4;}
-      else if(trapBeingsat >= Place){  
+     else if(trapBeingsat >= Place){  
         if(obstacle_a == obstacle_b){
           std::cout<<"||\tSomething is ahead...--->";
           std::getline(std::cin>>std::ws, choice);
@@ -683,7 +694,7 @@ Place =Placed;
            int frs = dr; 
            trapBeingsat = (rand()%15)+1;
            std::cout<<"**********************************|       |************************************"<<'\n';
-      int doors = 0;
+    
 
   while(run) {
   int h= Obstacle(op);
@@ -723,15 +734,7 @@ Place =Placed;
           //remember
       break;    
         }
-      if(trapBeingsat>= h && doors<1){
-      std::cout<<"||                                                                           ||"<<'\n';
-      std::cout<<"||\t\t\tDoors has started showing step " <<'\n';
-      std::cout<<"||                                                                           ||"<<'\n';
-      std::cout<<"||                                                                           ||"<<'\n';
-                                                                             
-             doors=20; 
-    }
- 
+
 
   
   std::cout<<"||                                                                           ||"<<'\n';

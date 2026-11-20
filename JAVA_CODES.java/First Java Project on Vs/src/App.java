@@ -4,6 +4,8 @@ public class App {
     public static void main(String[] args) throws Exception {
         Scanner gh = new Scanner(System.in);
       String nf,yus;
+      int ds = (1+(int)(Math.random()*10));
+      System.out.println(ds);
       System.out.println("***************************************");
       System.out.println("////////////////////////////////////////");
       System.out.println("\n\t\tHello!!!\n");
