@@ -54,6 +54,8 @@ else{
 
   int Obstacle(int Place){
 
+
+
     std::cout<<"||                                                                           ||"<<'\n';
     std::cout<<"||\tYou are now on step: "<<Place<<'\n';
     
@@ -74,6 +76,19 @@ else{
     double setlevel =set_steps,Placed =Place;
     int obstacle_a= (rand()%25)+1;
     int obstacle_b = (rand()%25)+1;
+
+    
+    double setparts =setlevel/5;
+    double SetParts1 =setparts;
+    double SetParts2 =setparts+SetParts1 ;
+    double SetParts3 =setparts+SetParts2;
+    double SetParts4 =setparts+SetParts3;
+    double SetParts5 =setparts+SetParts4;
+
+
+
+
+
     std::cout<<"||                                                                           ||"<<'\n';
 
 
