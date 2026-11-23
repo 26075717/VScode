@@ -15,376 +15,8 @@ int foundDoor =0;
 
 
 std:: string choice;
-
-  int MoveABC(int ar, int br, int cr, double Placedd, int setplaced);
-
-void Door_Found(){
-
-
-if(foundDoor>0){
-           std::cout<<"||\t ______________ "<<"'\n";
-           std::cout<<"||\t|              |"<<"'\n";
-           std::cout<<"||\t|              |"<<"'\n";
-           std::cout<<"||\t| O            |"<<"'\n";
-           std::cout<<"||\t|              |"<<"'\n";
-           std::cout<<"||\t|              |"<<"'\n";
-           std::cout<<"||\t|              |"<<"'\n";
-           std::cout<<"||\t|              |"<<"'\n";
-           std::cout<<"||\t ______________ "<<"'\n";
-           
-
-
-
-}
-else{
-                std::cout<<"||\t ______________ "<<"'\n";
-                std::cout<<"||\t|XXXXXXXXXXXXXX|"<<"'\n";
-                std::cout<<"||\t|XXXXXXXXXXXXXX|"<<"'\n";
-                std::cout<<"||\t| O XXXXXXXXXXX|"<<"'\n";
-                std::cout<<"||\t|XXXXXXXXXXXXXX|"<<"'\n";
-                std::cout<<"||\t|XXXXXXXXXXXXXX|"<<"'\n";
-                std::cout<<"||\t|XXXXXXXXXXXXXX|"<<"'\n";
-                std::cout<<"||\t|XXXXXXXXXXXXXX|"<<"'\n";
-                std::cout<<"||\t ______________ "<<"'\n";
-                
-
-
-
-}
-
-}
-
-  int Obstacle(int Place){
-      std::cout<<"||                                                                           ||"<<'\n';
-  std::cout<<"||                                                                           ||"<<'\n';
-  std::cout<<"||\tKeep moving...---> ";
-  std::getline(std::cin>>std::ws, choice);
-  std::cout<<"||                                                                           ||"<<'\n';
- 
-
-
-
-    std::cout<<"||                                                                           ||"<<'\n';
-    std::cout<<"||\tYou are now on step: "<<Place<<'\n';
-    
-          if(trapBeingsat<=Place && doors<1){
-      std::cout<<"||                                                                           ||"<<'\n';
-      std::cout<<"||\t\t\tDoors has started showing " <<'\n';
-      std::cout<<"||                                                                           ||"<<'\n';
-      std::cout<<"||                                                                           ||"<<'\n';
-                                                                             
-             doors=20; 
-    }
- 
-    
-    int outof100 =0;
-    int up_down=0;
-    int rolled = (rand()%6)+1;//delet later
-    
-    double setlevel =set_steps,Placed =Place;
-    int obstacle_a= (rand()%25)+1;
-    int obstacle_b = (rand()%25)+1;
-
-    std::cout<<"||                                                                           ||"<<'\n';
-
-
-    if(Place<trapBeingsat){
-      //Trap doors won't show
-      a=-3;b=-5;c=-4;
-    }
-
-  else if(Place>=trapBeingsat){  
-    //Show trap doors
-
-        if(obstacle_a == obstacle_b){
-          std::cout<<"||\tSomething is ahead...--->";
-          std::getline(std::cin>>std::ws, choice);
-          std::cout<<"||\tOh, this is bad... "<<'\n';
-            c=9; a=-30; b=-3;
-             std::cout<<"||\tKeep moving...---> ";
-            std::getline(std::cin>>std::ws, choice);
-
-        }
-        else if(obstacle_a >6 && obstacle_a<10){
-           std::cout<<"||\tSomething is ahead...---> ";
-           a=5,e=5;b=-8; c=-4;
-           std::getline(std::cin>>std::ws, choice);
-            foundDoor=4;
-           Door_Found();
-
-           
-           std::cout<<"||\tYou found a door(A1) and entered it."<<'\n';
-            std::cout<<"||\tKeep moving...---> ";
-           std::getline(std::cin>>std::ws, choice);
-        }
-        else if(obstacle_a>11&& obstacle_a<16){
-            std::cout<<"||\tSomething is ahead...---> ";
-             std::getline(std::cin>>std::ws, choice);
-
-              foundDoor=4;
-           Door_Found();
-          
-         c=-3;  a=-5; b=8;e=7;
-            std::cout<<"||\tYou found a door(B1) and entered it."<<'\n';
-             std::cout<<"||\tKeep moving...---> ";
-             std::getline(std::cin>>std::ws, choice);
-        }
-     else if(obstacle_a>0&& obstacle_a<3){
-         
-         std::cout<<"||\tWait something could be here...---> ";
-          std::getline(std::cin>>std::ws, choice);
-         if(obstacle_b>0&&obstacle_b<3){
-             
-             a=9; b=-4; c=-5; e=-9;
-              foundDoor=7;
-           Door_Found();
-            
-             
-             
-             std::cout<<"||\tYou found a door(A2) and entered it."<<'\n';
-              std::cout<<"||\tKeep moving...---> ";
-  std::getline(std::cin>>std::ws, choice);
-            }
-            
-            else if(obstacle_b>2&&obstacle_b<12){
-           foundDoor=-4;
-           Door_Found();
-                
-          
-                
-            c=-9;    a=0,b=0,e=0; 
-                std::cout<<"||\tNo door found. "<<'\n';
-                 std::cout<<"||\tKeep moving...---> ";
-  std::getline(std::cin>>std::ws, choice);
-              }
-       else if(obstacle_b>11&&obstacle_b<16){
-          foundDoor=4;
-           Door_Found();
-         
-       b=8,e=7;  a=-8; c=-9; 
-       std::cout<<"||\tYou found a door (B2) and entered it."<<'\n';
-        std::cout<<"||\tKeep moving...---> ";
-       std::getline(std::cin>>std::ws, choice);
-       
-    }
-    else{
-       a=-8; b=-5; c=-9; e =-5;
-std:: cout<<"||\tOH...nothing is here...\n";
-      std::cout<<"||\tKeep moving...---> ";
-       std::getline(std::cin>>std::ws, choice);
-
-    }
-}
-  else{
-    a=-8; b=-5; c=-9; e =-5;
-    std::cout<<"||\tClear part. "<<'\n';
-     std::cout<<"||\tKeep moving...---> ";
-  std::getline(std::cin>>std::ws, choice);
-    
-    
-   }
-  }
-
-  else{
-         a=-8; b=-5; c=-9; e =-5;
-    std::cout<<"||                                                                           ||"<<'\n';
-      std::cout<<"||\tKeep moving...---> ";
-  std::getline(std::cin>>std::ws, choice);
-  }
-   std::cout<<"||                                                                           ||"<<'\n';
-
-         
-
-       if(set_steps >5600){
-                  up_down= (rand()%100)+1;
-                    f= up_down; 
-            }
-           else{
-                 
-
-                         //MOVEMENT OF A,B,C   
-                       
-                        //A MOVEMENT  / A Doors 
-
-    
-            
-            if(a>0){
-              
-              Placed =MoveABC( a, b,c, Placed,  set_steps);
-               
-            std::cout<<"||                                                                           ||"<<'\n';
-            std::cout<<"||\tGood door, is a Shortcut, and leads you up to step: "<<Placed<< '\n';
-            
-                }
-            
-                // B MOVEMENT
-            else if(b>0){
-    Placed =MoveABC( a, b,c, Placed,  set_steps);
-               
-            std::cout<<"||                                                                           ||"<<'\n';
-            std::cout<<"||\t Bad door is a Shortcut, and leads you downd to step: "<<Placed<< '\n';
-           }
-            
-//C MOVEMENT
-            
-             else if(c>0){
-               std::cout<<"||                                                                           ||"<<'\n';
-               Placed = MoveABC( a, b,c, Placed,  set_steps);
-               std::cout<<"||                                                                           ||"<<'\n';
-               int stack = crRolled;
-               while (run){
-                 
-                 std::cout<<"||\tRoll the dice...---> ";
-                 std::getline(std::cin>>std::ws, choice);
-                 int rolled = (rand()%6)+1;
-
-                 for(int i = 0; i<=rolled; i++){
-                  stack--;
-                  if(stack==0){
-                  std::cout<<"||                                                                           ||"<<'\n';
-                   std::cout<<"||\tYou have broken free...---> ";
-                   std::getline(std::cin>>std::ws, choice);
-                   Placed++;
-
-
-                  }
-
-                 }
-                 if(stack<1){
-                   std::cout<<"||                                                                           ||"<<'\n';
-                   std::cout<<"||\tYou are now free to Keep playing...---> ";
-                   std::getline(std::cin>>std::ws, choice);
-                   std::cout<<"||                                                                           ||"<<'\n';
-                   std::cout<<"||\tYou moved up the steps by: "<<Placed<<'\n';
-                   std::getline(std::cin>>std::ws, choice);
-                   std::cout<<"||                                                                           ||"<<'\n';
-
-                   break;
-                   
-                }
-
-
-
-               }
-          
-           }
-               
-          else    {
-                std::cout<<"||\tYou are moving by the rolled amount: "<<rolled<<'\n';
-                
-                Place=Place+rolled ;
-                Placed=Place;
-              }
-
-              
-            }
-        
-        
-        if(Placed==setlevel){
-           std::cout<<"||\tKeep moving...---> ";
-            std::getline(std::cin>>std::ws, choice);
-            std::cout<<"**********************************|       |************************************"<<'\n';
-            std::cout<<"**********************************|       |************************************"<<'\n';
-          std::cout<<"||                                                                           ||"<<'\n';
-          std::cout <<"||\t\t\t\tYou win "<<'\n';
-          std::cout<<"||                                                                           ||"<<'\n';
-          std::cout<<"__________________________________|       |____________________________________"<<'\n'; 
-          std::cout<<"**********************************|       |************************************"<<'\n';
-          std::cout<<"**********************************|       |************************************"<<'\n';
-          std::cout<<"**********************************|       |************************************"<<'\n';
-          std::cout<<"*******************************************************************************"<<'\n';
-          
-          run =false;
-        }
-       /**else if(Placed>setlevel){
-          
-          double rtop = setlevel/2;
-          int yuo =rtop;
-          Placed =yuo;
-          std::cout<<"**********************************|       |************************************"<<'\n';
-          std::cout<<"__________________________________|       |____________________________________"<<'\n'; 
-          std::cout <<"||\t\t\tYou are out of steplevel. "<<'\n';
-          std::cout<<"__________________________________|       |____________________________________"<<'\n'; 
-          std::cout<<"**********************************|       |************************************"<<'\n';
-          std::cout<<"**********************************|       |************************************"<<'\n';
-          std::cout<<"**********************************|       |************************************"<<'\n';
-          std::cout<<"__________________________________|       |____________________________________"<<'\n'; 
-          
-          
-        }*/
-
-
-    Place = Placed;
-
-     
-  return Place;
-         }
-
-
-
-
-
-         int main(){
-           
-           srand(time(0));
-           
-
-           int op =0;
-           double dr = set_steps*(15/100);
-           int frs = dr; 
-           trapBeingsat = (rand()%15)+1;
-           std::cout<<"**********************************|       |************************************"<<'\n';
-    
-
-  while(run) {
-    run;
-  int h= Obstacle(op);
-  std::cout<<"**********************************|       |************************************"<<'\n';
-  std::cout<<"||                                                                           ||"<<'\n';
-  std::cout<<"||                                                                           ||"<<'\n';
-  if(doors<1){
-    std::cout<<"||\t\t\tDoors can be found from steps: "<<trapBeingsat<< " and above"<<'\n';
-  }
-  else{
-
-
-  std::cout<<"||\t\t\tDoors can now be found "<<'\n';
-}
-  std::cout<<"||                                                                           ||"<<'\n';
-
-  std::cout<<"||\t\t\t    New place from "<<op<<" : " <<h<<'\n';
-  std::cout<<"||                                                                           ||"<<'\n';
-  std::cout<<"||                                                                           ||"<<'\n';
-  std::cout<<"__________________________________|       |____________________________________"<<'\n'; 
-  std::cout<<"**********************************|       |************************************"<<'\n';
-  std::cout<<"**********************************|       |************************************"<<'\n';
-  std::cout<<"**********************************|       |************************************"<<'\n';
-  std::cout<<"__________________________________|       |____________________________________"<<'\n';
-  op=h;
-  if(op==set_steps){
-           std::cout<<"||\tKeep moving...---> ";
-            std::getline(std::cin>>std::ws, choice);
-          std::cout<<"||                                                                           ||"<<'\n';
-          std::cout <<"||\t\t\tYou win "<<'\n';
-          std::cout<<"||                                                                           ||"<<'\n';
-          std::cout<<"__________________________________|       |____________________________________"<<'\n'; 
-          std::cout<<"**********************************|       |************************************"<<'\n';
-          std::cout<<"**********************************|       |************************************"<<'\n';
-          std::cout<<"**********************************|       |************************************"<<'\n';
-          std::cout<<"*******************************************************************************"<<'\n';
-          //remember
-      break;    
-        }
-
-
-  
- }
- return 0;
-  
-  
-             }
-
-             int MoveABC(int ar, int br, int cr, double Placedd, int setplaced){
+//ABC - MOVEMENT
+  int MoveABC(int ar, int br, int cr, double Placedd, int setplaced){
     int movedto = 0;
 
 
@@ -753,7 +385,7 @@ break;
     
         while(run){
       
-       GOdown = Placedd-arRolled; 
+       GOdown = Placedd+arRolled; 
 
        if(GOdown>set_steps){
 //continue the loop
@@ -836,3 +468,379 @@ break;
 
 return movedto;
              }
+
+
+void Door_Found(){
+
+
+if(foundDoor>0){
+           std::cout<<"||\t ______________ "<<"'\n";
+           std::cout<<"||\t|              |"<<"'\n";
+           std::cout<<"||\t|              |"<<"'\n";
+           std::cout<<"||\t| O            |"<<"'\n";
+           std::cout<<"||\t|              |"<<"'\n";
+           std::cout<<"||\t|              |"<<"'\n";
+           std::cout<<"||\t|              |"<<"'\n";
+           std::cout<<"||\t|              |"<<"'\n";
+           std::cout<<"||\t ______________ "<<"'\n";
+           
+
+
+
+}
+else{
+                std::cout<<"||\t ______________ "<<"'\n";
+                std::cout<<"||\t|XXXXXXXXXXXXXX|"<<"'\n";
+                std::cout<<"||\t|XXXXXXXXXXXXXX|"<<"'\n";
+                std::cout<<"||\t| O XXXXXXXXXXX|"<<"'\n";
+                std::cout<<"||\t|XXXXXXXXXXXXXX|"<<"'\n";
+                std::cout<<"||\t|XXXXXXXXXXXXXX|"<<"'\n";
+                std::cout<<"||\t|XXXXXXXXXXXXXX|"<<"'\n";
+                std::cout<<"||\t|XXXXXXXXXXXXXX|"<<"'\n";
+                std::cout<<"||\t ______________ "<<"'\n";
+                
+
+
+
+}
+
+}
+
+  int Obstacle(int Place){
+      std::cout<<"||                                                                           ||"<<'\n';
+  std::cout<<"||                                                                           ||"<<'\n';
+  std::cout<<"||\tKeep moving...---> ";
+  std::getline(std::cin>>std::ws, choice);
+  std::cout<<"||                                                                           ||"<<'\n';
+ 
+
+
+
+    std::cout<<"||                                                                           ||"<<'\n';
+    std::cout<<"||\tYou are now on step: "<<Place<<'\n';
+    
+          if(trapBeingsat<=Place && doors<1){
+      std::cout<<"||                                                                           ||"<<'\n';
+      std::cout<<"||\t\t\tDoors has started showing " <<'\n';
+      std::cout<<"||                                                                           ||"<<'\n';
+      std::cout<<"||                                                                           ||"<<'\n';
+                                                                             
+             doors=20; 
+    }
+ 
+    
+    int outof100 =0;
+    int up_down=0;
+    int rolled = (rand()%6)+1;//delet later
+    
+    double setlevel =set_steps;
+    int Placed =Place;
+    int obstacle_a= (rand()%25)+1;
+    int obstacle_b = (rand()%25)+1;
+
+    std::cout<<"||                                                                           ||"<<'\n';
+
+
+    if(Place<trapBeingsat){
+      //Trap doors won't show
+      a=-3;b=-5;c=-4;
+      doors = -5;
+    }
+
+  else if(Place>=trapBeingsat){  
+    //Show trap doors
+
+        if(obstacle_a == obstacle_b){
+          std::cout<<"||\tSomething is ahead...--->";
+          std::getline(std::cin>>std::ws, choice);
+          std::cout<<"||\tOh, this is bad... "<<'\n';
+            c=9; a=-30; b=-3;
+             std::cout<<"||\tKeep moving...---> ";
+            std::getline(std::cin>>std::ws, choice);
+
+        }
+        else if(obstacle_a >6 && obstacle_a<10){
+           std::cout<<"||\tSomething is ahead...---> ";
+           a=5,e=5;b=-8; c=-4;
+           std::getline(std::cin>>std::ws, choice);
+            foundDoor=4;
+           Door_Found();
+
+           
+           std::cout<<"||\tYou found a door(A1) and entered it."<<'\n';
+            std::cout<<"||\tKeep moving...---> ";
+           std::getline(std::cin>>std::ws, choice);
+        }
+        else if(obstacle_a>11&& obstacle_a<16){
+            std::cout<<"||\tSomething is ahead...---> ";
+             std::getline(std::cin>>std::ws, choice);
+
+              foundDoor=4;
+           Door_Found();
+          
+         c=-3;  a=-5; b=8;e=7;
+            std::cout<<"||\tYou found a door(B1) and entered it."<<'\n';
+             std::cout<<"||\tKeep moving...---> ";
+             std::getline(std::cin>>std::ws, choice);
+        }
+     else if(obstacle_a>0&& obstacle_a<3){
+         
+         std::cout<<"||\tWait something could be here...---> ";
+          std::getline(std::cin>>std::ws, choice);
+         if(obstacle_b>0&&obstacle_b<3){
+             
+             a=9; b=-4; c=-5; e=-9;
+              foundDoor=7;
+           Door_Found();
+            
+             
+             
+             std::cout<<"||\tYou found a door(A2) and entered it."<<'\n';
+              std::cout<<"||\tKeep moving...---> ";
+  std::getline(std::cin>>std::ws, choice);
+            }
+            
+            else if(obstacle_b>2&&obstacle_b<12){
+           foundDoor=-4;
+           Door_Found();
+                
+          
+                
+            c=-9;    a=0,b=0,e=0; 
+                std::cout<<"||\tNo door found. "<<'\n';
+                 std::cout<<"||\tKeep moving...---> ";
+  std::getline(std::cin>>std::ws, choice);
+              }
+       else if(obstacle_b>11&&obstacle_b<16){
+          foundDoor=4;
+           Door_Found();
+         
+       b=8,e=7;  a=-8; c=-9; 
+       std::cout<<"||\tYou found a door (B2) and entered it."<<'\n';
+        std::cout<<"||\tKeep moving...---> ";
+       std::getline(std::cin>>std::ws, choice);
+       
+    }
+    else{
+       a=-8; b=-5; c=-9; e =-5;
+std:: cout<<"||\tOH...nothing is here...\n";
+      std::cout<<"||\tKeep moving...---> ";
+       std::getline(std::cin>>std::ws, choice);
+
+    }
+}
+  else{
+    a=-8; b=-5; c=-9; e =-5;
+    std::cout<<"||\tClear part. "<<'\n';
+     std::cout<<"||\tKeep moving...---> ";
+  std::getline(std::cin>>std::ws, choice);
+    
+    
+   }
+  }
+
+  else{
+         a=-8; b=-5; c=-9; e =-5;
+    std::cout<<"||                                                                           ||"<<'\n';
+      std::cout<<"||\tKeep moving...---> ";
+  std::getline(std::cin>>std::ws, choice);
+  }
+   std::cout<<"||                                                                           ||"<<'\n';
+
+         
+
+       if(set_steps >5600){
+                  up_down= (rand()%100)+1;
+                    f= up_down; 
+            }
+           else{
+                 
+
+                         //MOVEMENT OF A,B,C   
+                       
+                        //A MOVEMENT  / A Doors 
+
+    
+            
+            if(a>0){
+              
+             int X =9;
+             X =MoveABC( a, b,c, Place, set_steps);
+               
+            std::cout<<"||                                                                           ||"<<'\n';
+            std::cout<<"||\tGood door, is a Shortcut, and leads you up to step: "<<X<< '\n';
+            Placed = X;
+            
+                }
+            
+                // B MOVEMENT
+            else if(b>0){
+    int Y =7;
+    Y=MoveABC( a, b,c, Place,set_steps);
+               
+            std::cout<<"||                                                                           ||"<<'\n';
+            std::cout<<"||\t Bad door is a Shortcut, and leads you down to step: "<<Y<< '\n';
+             Placed = Y;
+           }
+            
+//C MOVEMENT
+            
+             else if(c>0){
+               std::cout<<"||                                                                           ||"<<'\n';
+               int z = 8;
+               z= MoveABC( a, b,c, Place,  set_steps);
+               std::cout<<"||\tYOU ARE STACK!!!...---> ";
+               std::getline(std::cin>>std::ws, choice);
+               std::cout<<"||                                                                           ||"<<'\n';
+               int stack = crRolled;
+               std::cout<<"||\tYou are stack on step: "<<Place<< " for: "<<crRolled<<" turn/s.";
+               std::getline(std::cin>>std::ws, choice);
+               while (run){
+                 
+                 std::cout<<"||                                                                           ||"<<'\n';
+                 std::cout<<"||\tRoll the dice...---> ";
+                 std::getline(std::cin>>std::ws, choice);
+                 int rolled = (rand()%6)+1;
+                 
+                 for(int i = 0; i<=rolled; i++){
+                   stack--;
+                   if(stack==0){
+                     std::cout<<"||                                                                           ||"<<'\n';
+                     std::cout<<"||\tYou have broken free...---> ";
+                     std::getline(std::cin>>std::ws, choice);
+                     Placed++;
+                     
+                     
+                    }
+                   
+                 }
+                 if(stack<1){
+                   std::cout<<"||                                                                           ||"<<'\n';
+                   std::cout<<"||\tYou are now free to Keep playing...---> ";
+                   std::getline(std::cin>>std::ws, choice);
+                   std::cout<<"||                                                                           ||"<<'\n';
+                   std::cout<<"||\tYou moved up the steps by: "<<Placed;
+                   std::cout<<"||\t";    
+                   std::getline(std::cin>>std::ws, choice);
+                   std::cout<<"||                                                                           ||"<<'\n';
+                   
+                   break;
+                   
+                  }
+                  
+                  std::cout<<"||\tYou rolled: "<<rolled<<'\n' ;
+                  std::cout<<"||                                                                           ||"<<'\n';
+                std::cout<<"||\tYou are now stack on step: "<<Place<< " for: "<<stack<<" turn/s."<<'\n';
+                std::cout<<"||\t";    
+                std::getline(std::cin>>std::ws, choice);
+                std::cout<<"||                                                                           ||"<<'\n';
+                    
+
+               }
+          
+           }
+               
+          else    {
+                std::cout<<"||\tYou are moving by the rolled amount: "<<rolled<<'\n';
+                
+                Place=Place+rolled ;
+                Placed=Place;
+              }
+
+              
+            }
+        
+        
+       if(Placed==setlevel){
+           std::cout<<"||\tKeep moving...---> ";
+            std::getline(std::cin>>std::ws, choice);
+            std::cout<<"**********************************|       |************************************"<<'\n';
+            std::cout<<"**********************************|       |************************************"<<'\n';
+          std::cout<<"||                                                                           ||"<<'\n';
+          std::cout <<"||\t\t\t\tYou win "<<'\n';
+          std::cout<<"||                                                                           ||"<<'\n';
+          std::cout<<"__________________________________|       |____________________________________"<<'\n'; 
+          std::cout<<"**********************************|       |************************************"<<'\n';
+          std::cout<<"**********************************|       |************************************"<<'\n';
+          std::cout<<"**********************************|       |************************************"<<'\n';
+          std::cout<<"*******************************************************************************"<<'\n';
+          
+          run =false;
+        }
+       
+
+    Place = Placed;
+
+     
+  return Place;
+         }
+
+
+
+
+
+         int main(){
+           
+           srand(time(0));
+           
+     set_steps = 400;
+           int op =0;
+           double dr = set_steps*(15/100);
+           int frs = dr; 
+           trapBeingsat = (rand()%15)+1;
+           std::cout<<"**********************************|       |************************************"<<'\n';
+           
+       
+ while(run) {
+    run;
+  int h= Obstacle(op);
+  std::cout<<"**********************************|       |************************************"<<'\n';
+  std::cout<<"||                                                                           ||"<<'\n';
+  std::cout<<"||                                                                           ||"<<'\n';
+  if(doors<1){
+    std::cout<<"||\t\t\tDoors can be found from steps: "<<trapBeingsat<< " and above"<<'\n';
+  }
+  else{
+
+
+  std::cout<<"||\t\t\tDoors can now be found "<<'\n';
+}
+  std::cout<<"||                                                                           ||"<<'\n';
+
+  std::cout<<"||\t\t\t    New place from "<<op<<" : " <<h<<'\n';
+  std::cout<<"||                                                                           ||"<<'\n';
+  std::cout<<"||                                                                           ||"<<'\n';
+  std::cout<<"__________________________________|       |____________________________________"<<'\n'; 
+  std::cout<<"**********************************|       |************************************"<<'\n';
+  std::cout<<"**********************************|       |************************************"<<'\n';
+  std::cout<<"**********************************|       |************************************"<<'\n';
+  std::cout<<"__________________________________|       |____________________________________"<<'\n';
+  op=h;
+  if(op==set_steps){
+           std::cout<<"||\tKeep moving...---> ";
+            std::getline(std::cin>>std::ws, choice);
+          std::cout<<"||                                                                           ||"<<'\n';
+          std::cout <<"||\t\t\tYou win "<<'\n';
+          std::cout<<"||                                                                           ||"<<'\n';
+          std::cout<<"__________________________________|       |____________________________________"<<'\n'; 
+          std::cout<<"**********************************|       |************************************"<<'\n';
+          std::cout<<"**********************************|       |************************************"<<'\n';
+          std::cout<<"**********************************|       |************************************"<<'\n';
+          std::cout<<"*******************************************************************************"<<'\n';
+          //remember
+          break;    
+          }
+          
+          
+          
+          }
+         
+         
+      
+
+ return 0;
+  
+  
+             }
+
+          
