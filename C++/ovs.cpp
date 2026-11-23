@@ -4,6 +4,7 @@
 double f=0;
 int a=0,b=0,c=0,d=0,e=0;
 int set_steps =0, playerPosition =0, playerRolls =0, numdic =0 , Position_Lock=0,Place;
+int crRolled =0;
 bool run=true;
   int doors = 0;
 int newplayerPosition=0;
@@ -15,6 +16,7 @@ int foundDoor =0;
 
 std:: string choice;
 
+  int MoveABC(int ar, int br, int cr, double Placedd, int setplaced);
 
 void Door_Found(){
 
@@ -53,6 +55,12 @@ else{
 }
 
   int Obstacle(int Place){
+      std::cout<<"||                                                                           ||"<<'\n';
+  std::cout<<"||                                                                           ||"<<'\n';
+  std::cout<<"||\tKeep moving...---> ";
+  std::getline(std::cin>>std::ws, choice);
+  std::cout<<"||                                                                           ||"<<'\n';
+ 
 
 
 
@@ -77,18 +85,6 @@ else{
     int obstacle_a= (rand()%25)+1;
     int obstacle_b = (rand()%25)+1;
 
-    
-    double setparts =setlevel/5;
-    double SetParts1 =setparts;
-    double SetParts2 =setparts+SetParts1 ;
-    double SetParts3 =setparts+SetParts2;
-    double SetParts4 =setparts+SetParts3;
-    double SetParts5 =setparts+SetParts4;
-
-
-
-
-
     std::cout<<"||                                                                           ||"<<'\n';
 
 
@@ -111,7 +107,7 @@ else{
         }
         else if(obstacle_a >6 && obstacle_a<10){
            std::cout<<"||\tSomething is ahead...---> ";
-           a=5,e=5;b=-8;
+           a=5,e=5;b=-8; c=-4;
            std::getline(std::cin>>std::ws, choice);
             foundDoor=4;
            Door_Found();
@@ -128,7 +124,7 @@ else{
               foundDoor=4;
            Door_Found();
           
-           a=-5; b=8;e=7;
+         c=-3;  a=-5; b=8;e=7;
             std::cout<<"||\tYou found a door(B1) and entered it."<<'\n';
              std::cout<<"||\tKeep moving...---> ";
              std::getline(std::cin>>std::ws, choice);
@@ -139,7 +135,7 @@ else{
           std::getline(std::cin>>std::ws, choice);
          if(obstacle_b>0&&obstacle_b<3){
              
-             a=9; 
+             a=9; b=-4; c=-5; e=-9;
               foundDoor=7;
            Door_Found();
             
@@ -165,13 +161,14 @@ else{
           foundDoor=4;
            Door_Found();
          
-       b=8,e=7;
+       b=8,e=7;  a=-8; c=-9; 
        std::cout<<"||\tYou found a door (B2) and entered it."<<'\n';
         std::cout<<"||\tKeep moving...---> ";
        std::getline(std::cin>>std::ws, choice);
        
     }
     else{
+       a=-8; b=-5; c=-9; e =-5;
 std:: cout<<"||\tOH...nothing is here...\n";
       std::cout<<"||\tKeep moving...---> ";
        std::getline(std::cin>>std::ws, choice);
@@ -189,7 +186,7 @@ std:: cout<<"||\tOH...nothing is here...\n";
   }
 
   else{
-
+         a=-8; b=-5; c=-9; e =-5;
     std::cout<<"||                                                                           ||"<<'\n';
       std::cout<<"||\tKeep moving...---> ";
   std::getline(std::cin>>std::ws, choice);
@@ -204,544 +201,75 @@ std:: cout<<"||\tOH...nothing is here...\n";
             }
            else{
                  
-       TD: while(run){
-                  up_down = (rand()%100)+3;
-                   outof100 = up_down;
-        
-                std::cout<<"||\tOut of 100 is : "<<outof100<<'\n';//delet later
-                std::cout<<"||\trolled is : "<<rolled<<'\n';//delet later
 
-            if(up_down>99){
-                     for(int i=1; i<=outof100; i++){
-                         up_down--;
-                     }
-           
-                         }
-               else{
-                      f= up_down; //eg f-43
-                      int fairpercen=0;
-                      while(run){
-                   fairpercen= (rand()%85)+20;
-                   if(fairpercen<86){
-                    break;}
-                 }
                          //MOVEMENT OF A,B,C   
-                        
-                        double half= setlevel/2; 
-                        double gound=0; 
-                        double Percentofsetstep =(f/100)*setlevel; //43% of setlevel
                        
                         //A MOVEMENT  / A Doors 
 
-        if(a>0){ 
+    
             
-            gound= (setlevel - Percentofsetstep); //gound is 400 - (43%*400) = 172
-               double goun = (gound)*(1/100);     // 1%*172 =1.72
-              double goun0 = (gound)*(5/100);  // 5%*172  = 8.6
-               double goun1 = (gound)*(10/100);  // 10%*172 = 17.2
-              double goun2 = (gound)*(20/100);  // 20%*172 = 34.4
-              double goun3 = (gound)*(30/100);  // 30%*172 = 51.6
-              double goun4 = (gound)*(40/100);  // 40%*172 = 68,8
-              double goun5 = (gound)*(50/100); // 50%*172 = 86
-             double goun7 = (gound)*(76/100);  // 76%*172 = 130.72
-             double goun8 = (gound)*(80/100);  // 80%*172 =137.6
-              double fg = 0;
-
-
-              int gon =goun;
-              int gon0 =goun0;
-              int gon1 =goun1;
-              int gon2 =goun2;
-              int gon3 =goun3;
-              int gon4 =goun4;
-
-            if(Placed<=half){
-
-              if(gound<=half){// this is because I want gound place in half, e.g half =200, then gound is in the range of 0-200
-                  //Let say: gound is 172
-                //goun is 1% of gound, so goun will be 1.72
-
-            if(Placed<=gon){
-            //gound - 11
-
-              while(run){
-                 fg = (rand()%gon)+1;
-
-              if(Placed==gon){
-
-                 int rts = (rand()%13)+1;
-
-              switch(rts){
-               case 1: gound =+ goun1; break;
-               case 8: gound =+ goun0; break;
-               case 2: gound =+ goun2; break;
-               case 3: gound =+ goun3; break;
-               case 4: gound =+ goun4; break;
-               case 5: gound =+ goun5; break;
-               case 6: gound =+ goun7; break;
-               case 7: gound =+ goun8; break;
-                default: gound =+ rts; break;
-
-              }
-              break;
-                 }
-                 else{
-                  gound =fg;
-                  break;}
+            if(a>0){
+              
+              Placed =MoveABC( a, b,c, Placed,  set_steps);
+               
+            std::cout<<"||                                                                           ||"<<'\n';
+            std::cout<<"||\tGood door, is a Shortcut, and leads you up to step: "<<Placed<< '\n';
+            
                 }
-              }
-
-         else if(Placed<=gon0){
-              while(run){
-                 fg = (rand()%gon0)+1;
-
+            
+                // B MOVEMENT
+            else if(b>0){
+    Placed =MoveABC( a, b,c, Placed,  set_steps);
+               
+            std::cout<<"||                                                                           ||"<<'\n';
+            std::cout<<"||\t Bad door is a Shortcut, and leads you downd to step: "<<Placed<< '\n';
+           }
+            
+//C MOVEMENT
+            
+             else if(c>0){
+               std::cout<<"||                                                                           ||"<<'\n';
+               Placed = MoveABC( a, b,c, Placed,  set_steps);
+               std::cout<<"||                                                                           ||"<<'\n';
+               int stack = crRolled;
+               while (run){
                  
-              if(Placed==gon0){
-             int rts = (rand()%12)+1;
-              switch(rts){
-               case 1: gound =+ goun1; break;
-               case 2: gound =+ goun2; break;
-               
-               case 3: gound =+ goun3; break;
-               case 4: gound =+ goun4; break;
-               case 5: gound =+ goun5; break;
-               case 6: gound =+ goun7; break;
-               case 7: gound =+ goun8; break;
-               default: gound =+ rts; break;
+                 std::cout<<"||\tRoll the dice...---> ";
+                 std::getline(std::cin>>std::ws, choice);
+                 int rolled = (rand()%6)+1;
 
-              }
-              break;
+                 for(int i = 0; i<=rolled; i++){
+                  stack--;
+                  if(stack==0){
+                  std::cout<<"||                                                                           ||"<<'\n';
+                   std::cout<<"||\tYou have broken free...---> ";
+                   std::getline(std::cin>>std::ws, choice);
+                   Placed++;
+
+
+                  }
+
                  }
-                 else{
-                  gound =fg;
-                  break;}
-                }
-              }
+                 if(stack<1){
+                   std::cout<<"||                                                                           ||"<<'\n';
+                   std::cout<<"||\tYou are now free to Keep playing...---> ";
+                   std::getline(std::cin>>std::ws, choice);
+                   std::cout<<"||                                                                           ||"<<'\n';
+                   std::cout<<"||\tYou moved up the steps by: "<<Placed<<'\n';
+                   std::getline(std::cin>>std::ws, choice);
+                   std::cout<<"||                                                                           ||"<<'\n';
 
-              else if(Placed<=gon1){
-
-              while(run){
-                 fg = (rand()%gon1)+1;
-
-                  if(Placed==gon1){
-                 int rts = (rand()%9)+1;
-              switch(rts){
-               
-               case 2: gound =+ goun2; break;
-               case 3: gound =+ goun3; break;
-               case 4: gound =+ goun4; break;
-               case 5: gound =+ goun5; break;
-               case 6: gound =+ goun7; break;
-               case 7: gound =+ goun8; break;
-               default: gound =+ rts; break;
-
-              }
-              break;
-                 }
-                 else{
-                  gound =fg;
-                  break;}
-                }
-              }
-              else if(Placed<=gon2){
-              while(run){
-                 fg = (rand()%gon2)+1;
-
-                  if(Placed==gon2){
-                 int rts = (rand()%9)+1;
-              switch(rts){
-               case 1: gound =+ goun1; break;
-             
-               case 3: gound =+ goun3; break;
-               case 4: gound =+ goun4; break;
-               case 5: gound =+ goun5; break;
-               case 6: gound =+ goun7; break;
-               case 7: gound =+ goun8; break;
-               default: gound =+ rts; break;
-
-              }
-              break;
-                 }
-                 else{
-                  gound =fg;
-                  break;}
-                }
-              }
-          else if(Placed<=goun3){
-              while(run){
-                 fg = (rand()%gon3)+1;
-
-                  if(Placed==gon3){
-                 int rts = (rand()%9)+1;
-              switch(rts){
-               case 1: gound =+ goun1; break;
-               case 2: gound =+ goun2; break;
-               case 4: gound =+ goun4; break;
-               case 5: gound =+ goun5; break;
-               case 6: gound =+ goun7; break;
-               default: gound =+ rts; break;
-             
-              }
-              break;
-            }
-            else{
-              gound =fg;
-              break;}
-            }
-          }
-          else if(Placed<=gon4){
-            while(run){
-              fg = (rand()%gon4)+1;
-              if(Placed>fg){}
-              else if(Placed==gon4){
-              
-                int rts = (rand()%11)+1;
-
-
-              switch(rts){
-               case 1: gound =+ goun1; break;
-               case 2: gound =+ goun2; break;
-               case 3: gound =+ goun3; break;
-              
-               case 5: gound =+ goun5; break;
-               
-               
-               default: gound =+ rts; break;
-
-              }
-              break;
-                 }
-                 else{
-                  gound =fg;
-                  break;}
-                }
-              }
-              int gou =gound;
-
-              Placed=Placed+gou;
-            }
-
-
-            else if(gound>half){
-
-             int gou =gound;
-
-              Placed=Placed+gou;
-
-                    //fairpercen is inbetween 20-85
-              int halfed = (half*(fairpercen/100)); //max- 200 *85% = 179
-
-              if(Placed>setlevel){
-
-                for(int p =1; p<gou;p++){
-                  Placed--;}
-                Placed= Placed+halfed;
-                
-              }
-            }
-            
-          } 
-          else if(Placed>half){ //300>200
-            
-            
-              if(gound<half){ //199<200
-
-
-                  int gou =gound;
-                  Placed=Placed+gou;
-                  //300+200 =500
-
-                  if(Placed>setlevel){
-                    Placed = Placed - gou;
-                    while(run){
-                int halfed = (half*(fairpercen/100));
-                Placed = Placed+halfed;
-
-                    if(Placed>setlevel){
-                      //continue until we get Placed < setlevel
-                      Placed = Placed-halfed;
-                  
-
-                    }
-
-
-                    else{break;}
-              
-              }
-
-              }
-           
-              
-            }
-
-            else if(gound>=half){
-              
-              int gou =gound;
-
-              Placed=Placed+gou;
-
-
-              
-             double  halfed = (half*(fairpercen/100));
-             int haled =halfed;
-              while (run)
-              if(Placed>setlevel){
-                Placed=Placed-gou;
-                
-                Placed = Placed+haled;
-                
-              }else{
-                break;}
-            }
-
-          }
-          
-          
-          std::cout<<"||                                                                           ||"<<'\n';
-          std::cout<<"||\tGound a: "<<gound<<'\n'; //delet later
-          std::cout<<"||                                                                           ||"<<'\n';
-            std::cout<<"||\tf is : "<<f<<"%"<<'\n';//delet later
-            std::cout<<"||                                                                           ||"<<'\n';
-            std::cout<<"||\t%  is : "<<Percentofsetstep<<" out of: " <<setlevel<<'\n'; //delet later
-            std::cout<<"||                                                                           ||"<<'\n';
-            std::cout<<"||\tGood news the door is a Shortcut, and leads you up by: "<<gound<< " step/s"<<'\n';
-            
-            
-            
-
-            
-            
-          }  
-          // B MOVEMENT
-        /*  else if(b>0){ 
-            
-                gound= (setlevel - Percentofsetstep);
-
-                  if(Placed<=half){
-                    if(gound<half){
-                      Placed=Placed-gound;
-                      if(Placed<0){
-                        Placed=Placed+gound;
-                        Placed = Placed-(Placed*(fairpercen/100));
-                      }
-
-                    }
-                    else if(gound>=half){
-                      Placed=Placed-gound;
-                    }
-
+                   break;
                    
-                  } 
-                 
-                  else if(Placed>half){
-              
-              if(gound<half){
-              Placed=Placed-gound;
-            }
-            else if(gound>=half){
-              Placed=Placed+gound;
-
-              int halfed = (half*(fairpercen/100));
-              if(Placed>setlevel){
-                for(int p =1; p<gound;p++){Placed--;}
-                Placed= Placed+halfed;
-                
-              }
-            }
-
-           
-          }
-                
-                Placed=Placed-gound;
-                    if(Placed<0){
-
-                       Placed=0;
-                    } 
-               // Placed = Placed-(Placed*(fairpercen/100));
-               int goun = (gound)*(1/100);
-               int goun0 = (gound)*(5/100);
-               int goun1 = (gound)*(10/100);
-               int goun2 = (gound)*(20/100);
-               int goun3 = (gound)*(30/100);
-               int goun4 = (gound)*(40/40);
-               int fg = 0;
-               
-               
-               
-               
-               if(Placed == 1){
-                 Placed =0;
-                }
-               else if(Placed<=goun){  
-                while(run){
-                 fg = (rand()%goun)+1;
-
-                 if(Placed>fg){}
-                 else{
-                  Place-fg;
-                  break;}
-
-                 }
-            }
-              
-            else if(Placed<=goun0){
-              while(run){
-                fg = (rand()%goun0)+1;
-                
-                if(Placed>fg){}
-                 else{
-                  Place-fg;
-                  break;}
                 }
 
-              }
-       else if(Placed<=goun1){
-          while(run){
-                 fg = (rand()%goun1)+1;
 
-                 if(Placed>fg){}
-                 else{
-                  Place-fg;
-                  break;}
-
-                 }
-
-                 }
-
-
-
-               else if(Placed<=goun2){
-                  while(run){
-                 fg = (rand()%goun2)+1;
-
-                 if(Placed>fg){}
-                 else{
-                  Place-fg;
-                  break;}
-
-                 }
 
                }
-               else if(Placed<=goun3){
-                  while(run){
-                 fg = (rand()%goun3)+1;
-
-                 if(Placed>fg){}
-                 else{
-                  Place-fg;
-                  break;}
-
-                 }
-
-               }
-               else if (Place<=goun4){
-                 while(run){
-                 fg = (rand()%goun4)+1;
-
-                 if(Placed>fg){}
-                 else{
-                  Place-fg;
-                  break;}
-
-                 }
-
-                
-               }
-
-
+          
+           }
                
-               
-              
-            std::cout<<"||\tPlace b: "<<gound<<'\n';//delet later
-            std::cout<<"||                                                                           ||"<<'\n';
-            std::cout<<"||\tf is : "<<f<<"%"<<'\n';//delet later
-            std::cout<<"||                                                                           ||"<<'\n';
-            std::cout<<"||\t%  is : "<<Percentofsetstep<<" out of: " <<setlevel<<'\n'; //delet later
-            std::cout<<"||                                                                           ||"<<'\n';
-            std::cout<<"||\tBad news you fell into a hole that leads you down to: "<<Placed<< " step/s"<<'\n';
-            
-            
-            
-        }*/
-        //C MOVEMENT
-        else if (c>0){
-          int up_doiwn =0;
-            while(run){
-              
-                up_doiwn= ((rand()%100)+43);
-                int outoif100 = up_doiwn;
-
-                if(up_doiwn>99){
-               for(int i=1; i<=outoif100; i++){
-                 up_doiwn--;}
-                }
-                
-                else{ up_doiwn= up_doiwn;
-                  
-                  break;}
-                }
-                int trap =(rand()%set_steps)+1;
-                int pon = (trap/set_steps)*100;
-                int pon1 = (set_steps)*(10/100);
-                int pon2 = (set_steps)*20/100;
-                int pon3 = (set_steps)*30/100;
-                int pon4 = (set_steps)*40/100;
-                int pon5 = (set_steps)*50/100;
-                int pon6 = (set_steps)*60/100;
-              int pon7 = (set_steps)*75/100;
-              
-              if(up_doiwn<76){
-                
-                if(pon<pon1){
-                  up_doiwn=((rand()%pon1)+1)/up_doiwn;
-                  d= up_doiwn;
-                }
-                
-                else if(pon<=pon2){
-                  up_doiwn=((rand()%pon2)+1)/up_doiwn;
-                  d= up_doiwn;
-                  
-                }
-                
-                else if(pon<=pon3){
-                  up_doiwn=((rand()%pon3)+1)/up_doiwn;
-                  d= up_doiwn;
-                }
-                
-                else if(pon<=pon4){
-                  up_doiwn=((rand()%pon4)+1)/up_doiwn;
-                  d= up_doiwn;
-                }
-                
-                else if(pon<=pon5){
-                  up_doiwn=((rand()%pon5)+1)/up_doiwn;
-                  d= up_doiwn;
-                 }
-                 
-                 else if(pon<=pon6){
-                  up_doiwn=((rand()%pon6)+1)/up_doiwn;
-                  d= up_doiwn;
-                 }
-                 else{
-                 up_doiwn=((rand()%pon7)+1)/up_doiwn;
-                  d= up_doiwn;
-
-                }
-             
-                }
-
-
-                else{
-                 up_doiwn=((rand()%pon7)+1)/up_doiwn;
-                  d= up_doiwn;
-                }   
-                
-                std::cout<<"||                                                                           ||"<<'\n';
-                std::cout<<"||\tYou entered a trap at step: "<< Placed <<" and can't move for: "<< d << " turn/s"<<'\n';
-                std::cout<<"||                                                                           ||"<<'\n';
-                
-              }
-              else{
+          else    {
                 std::cout<<"||\tYou are moving by the rolled amount: "<<rolled<<'\n';
                 
                 Place=Place+rolled ;
@@ -749,16 +277,7 @@ std:: cout<<"||\tOH...nothing is here...\n";
               }
 
               
-             
-              
-              
-              break;
             }
-            
-          }
-          
-          
-        }
         
         
         if(Placed==setlevel){
@@ -777,7 +296,7 @@ std:: cout<<"||\tOH...nothing is here...\n";
           
           run =false;
         }
-        else if(Placed>=setlevel){
+       /**else if(Placed>setlevel){
           
           double rtop = setlevel/2;
           int yuo =rtop;
@@ -792,7 +311,7 @@ std:: cout<<"||\tOH...nothing is here...\n";
           std::cout<<"__________________________________|       |____________________________________"<<'\n'; 
           
           
-        }
+        }*/
 
 
     Place = Placed;
@@ -808,7 +327,8 @@ std:: cout<<"||\tOH...nothing is here...\n";
          int main(){
            
            srand(time(0));
-           set_steps=400;
+           
+
            int op =0;
            double dr = set_steps*(15/100);
            int frs = dr; 
@@ -841,7 +361,7 @@ std:: cout<<"||\tOH...nothing is here...\n";
   std::cout<<"**********************************|       |************************************"<<'\n';
   std::cout<<"__________________________________|       |____________________________________"<<'\n';
   op=h;
-  if(c==set_steps){
+  if(op==set_steps){
            std::cout<<"||\tKeep moving...---> ";
             std::getline(std::cin>>std::ws, choice);
           std::cout<<"||                                                                           ||"<<'\n';
@@ -858,13 +378,461 @@ std:: cout<<"||\tOH...nothing is here...\n";
 
 
   
-  std::cout<<"||                                                                           ||"<<'\n';
-  std::cout<<"||                                                                           ||"<<'\n';
-  std::cout<<"||\tKeep moving...---> ";
-  std::getline(std::cin>>std::ws, choice);
-  std::cout<<"||                                                                           ||"<<'\n';
-  }
+ }
  return 0;
   
   
+             }
+
+             int MoveABC(int ar, int br, int cr, double Placedd, int setplaced){
+    int movedto = 0;
+
+
+int PartsJumper =(rand()%40)+1;
+double setparts =setplaced/5;
+int SetPart = setparts;
+
+  double SetParts1 =setparts;  // = 80
+   double SetParts2 =setparts+SetParts1 ;  //160
+   double SetParts3 =setparts+SetParts2; //240
+    double SetParts4 =setparts+SetParts3; //320
+    double SetParts5 =setparts+SetParts4;  //400
+    int GOdown = 0;
+    
+
+int SetPart1 = 0;
+int SetPart2 = 0;
+int SetPart3 = 0;
+int SetPart4 = 0;
+int SetPart5 = 0;
+
+if(set_steps%5 == 0){
+SetPart1 = SetParts1;
+SetPart2 = SetParts2;
+SetPart3 = SetParts3;
+SetPart4 = SetParts4;
+SetPart5 = SetParts5;
+  
+}
+else{
+  double remain = setparts - SetPart;
+  int reman = 5*remain;
+  int Placereman = rand()%5+1;
+
+  switch(Placereman){
+
+ case 1 : std::cout<<"Step 1 is longer than the rest by: " <<reman<<'\n';
+    SetPart1 = SetParts1;
+SetPart2 = SetParts2;
+SetPart3 = SetParts3 + reman;
+SetPart4 = SetParts4;
+SetPart5 = SetParts5;
+break;
+
+case 2 : std::cout<<"Step 5 is longer than the rest by: " <<reman<<'\n';
+SetPart1 = SetParts1;
+SetPart2 = SetParts2;
+SetPart3 = SetParts3 ;
+SetPart4 = SetParts4;
+SetPart5 = SetParts5+ reman;
+break;
+case 3 : std::cout<<"Step 1 is longer than the rest by: " <<reman<<'\n';
+SetPart1 = SetParts1 + reman;
+SetPart2 = SetParts2;
+SetPart3 = SetParts3 ;
+SetPart4 = SetParts4;
+SetPart5 = SetParts5;
+break;
+case 4 : std::cout<<"Step 2 is longer than the rest by: " <<reman<<'\n';
+SetPart1 = SetParts1 ;
+SetPart2 = SetParts2+ reman;
+SetPart3 = SetParts3 ;
+SetPart4 = SetParts4;
+SetPart5 = SetParts5;
+break;
+case 5 : std::cout<<"Step 4 is longer than the rest by: " <<reman<<'\n';
+SetPart1 = SetParts1 ;
+SetPart2 = SetParts2;
+SetPart3 = SetParts3 ;
+SetPart4 = SetParts4 + reman;
+SetPart5 = SetParts5;
+break;
+}
+
+
+
+}
+
+     // 0 - 80
+
+    if(Placedd <=SetPart1){
+      int arRolled = (rand()%SetPart1)+1;
+     if(ar>0){
+       //PartsJumper
+    switch(PartsJumper){
+     case 4: movedto =SetParts2+1; break;//Part 3
+     case 11: movedto =SetPart4+1; break;//Part 5
+     case 15: movedto =SetPart1+1; break;//Part 2
+     case 17: movedto =SetPart2+1; break;//Part 3
+     case 19: movedto =SetPart3+1; break;//Part 4
+     case 21: movedto =SetPart2+1; break;//Part 3
+     case 24: movedto =SetPart1+1; break;//Part 2
+     case 28: movedto =SetPart2+1; break;//Part 3
+     case 29: movedto =SetPart1+1; break;//Part 2
+     case 32: movedto =SetPart1+1; break;//Part 2
+     case 37: movedto =SetPart1+1; break;//Part 2
+     default :  movedto = Placedd+arRolled; break;
+ }
+
+       
+
+     }
+     else if(br>0){
+      while(run){
+       int BrRolled = (rand()%SetPart1)+1;
+       GOdown = Placedd-BrRolled; 
+
+       if(GOdown<0){
+//continue the loop
+
+       }
+       else{
+        movedto = GOdown;
+        break;
+       }
+
+     }
+     
+     }
+     else if(cr>0){
+       
+       crRolled = (rand()%SetPart1)+1; 
+       std::cout<<"||\tYou are stack on step: "<<Placedd<< " for: "<<crRolled<<" turn/s."<<'\n';
+
+     }
+
+
+    }
+    
+    
+    
+    //81-160
+    else if(Placedd <=SetPart2){
+
+       int arRolled = (rand()%SetPart2)+1;
+     if(ar>0){
+       //PartsJumper
+    switch(PartsJumper){
+     case 5: movedto =SetParts2+1; break;//Part 3
+     case 14: movedto =SetPart4+1; break;//Part 5
+     case 15: movedto =SetPart2+1; break;//Part 2
+     case 17: movedto =SetPart2+1; break;//Part 3
+     case 19: movedto =SetPart3+1; break;//Part 4
+     case 21: movedto =SetPart4+1; break;//Part 5
+     case 23: movedto =SetPart3+1; break;//Part 4
+     case 27: movedto =SetPart2+1; break;//Part 3
+     case 28: movedto =SetPart4+1; break;//Part 5
+     case 31: movedto =SetPart2+1; break;//Part 3
+     case 36: movedto =SetPart3+1; break;//Part 4
+      default :  movedto = Placedd+arRolled; break;
+ }
+
+       
+
+     }
+     else if(br>0){
+      while(run){
+       int BrRolled = (rand()%SetPart2)+1;
+       GOdown = Placedd-BrRolled; 
+
+       if(GOdown<0){
+//continue the loop
+
+       }
+       else{
+        movedto = GOdown;
+        break;
+       }
+
+     }
+     
+     }
+     else if(cr>0){
+       
+       crRolled = (rand()%SetPart2)+1; 
+       std::cout<<"||\tYou are stack on step: "<<Placedd<< " for: "<<crRolled<<" turn/s."<<'\n';
+
+     }
+
+
+
+    }
+    
+    
+   
+    //161-240
+    else if(Placedd <=SetPart3){
+
+  int arRolled = (rand()%SetPart3)+1;
+     if(ar>0){
+       //PartsJumper
+    switch(PartsJumper){
+     case 8: movedto =SetParts3+1; break;//Part 4
+     case 13: movedto =SetPart4+1; break;//Part 5
+    
+     case 17: movedto =SetPart3+1; break;//Part 4
+     case 19: movedto =SetPart4+1; break;//Part 5
+     case 22: movedto =SetPart4+1; break;//Part 5
+     case 27: movedto =SetPart3+1; break;//Part 4
+    
+     case 29: movedto =SetPart4+1; break;//Part 5
+     case 31: movedto =SetPart3+1; break;//Part 4
+  
+     case 35: movedto =SetPart3+1; break;//Part 4
+     default :  movedto = Placedd+arRolled; break;
+ }
+
+       
+
+     }
+     else if(br>0){
+      double halfed = 0;
+      int half = 0;
+
+       switch(PartsJumper){
+     case 4: movedto =SetParts3-SetPart1; break;//Part 2
+     case 11: movedto =SetPart3-SetPart2; break;//Part 1
+     case 15: movedto =(SetPart3-SetPart3)+1; break;//Part 2
+     case 17: movedto =SetPart3-SetPart1; break;//Part 3
+     case 19: movedto =SetPart3-SetPart1; break;//Part 4
+     case 21: halfed = SetPart2/2;
+              half = halfed;
+               movedto =half; break;//Part 3
+     case 24: halfed = SetPart1/2;
+              half = halfed;
+               movedto =half; break;//Part 2
+     case 28: halfed = SetPart1/2;
+              half = halfed;
+               movedto =half;; break;//Part 3
+     case 29: movedto =SetPart3-SetPart3; break;// move to 0
+     case 32: halfed = SetPart1/2;
+              half = halfed;
+               movedto =half; break;//Part 2
+
+     case 37: 
+             halfed = SetPart2/2;
+              half = halfed;
+               movedto =half;
+     
+     break;//Part 2
+      default : 
+ 
+      while(run){
+       int BrRolled = (rand()%SetPart3)+1;
+       GOdown = Placedd-BrRolled; 
+
+       if(GOdown<0){
+//continue the loop
+
+       }
+       else{
+        movedto = GOdown;
+        break;
+       }
+
+     }
+     break;
+    }
+     
+     }
+     else if(cr>0){
+       
+       crRolled = (rand()%SetPart3)+1; 
+       std::cout<<"||\tYou are stack on step: "<<Placedd<< " for: "<<crRolled<<" turn/s."<<'\n';
+
+     }
+      
+    }
+    
+    
+   
+  //  241-320
+  else if(Placedd <=SetPart4){
+
+  int arRolled = (rand()%SetPart1)+1;
+     if(ar>0){
+       //PartsJumper
+    switch(PartsJumper){
+     
+     case 11: movedto =SetPart4+1; break;//Part 5
+     case 17: movedto =SetPart4+1; break;//Part 5
+     
+     case 21: movedto =SetPart4+1; break;//Part 5
+     case 27: movedto =SetPart4+1; break;//Part 5
+     
+     case 34: movedto =SetPart4+1; break;//Part 5
+     case 38: movedto =SetPart4+1; break;//Part 5
+     default :  movedto = Placedd+arRolled; break;
+ }
+
+       
+
+     }
+     else if(br>0){
+       double halfed = 0;
+      int half = 0;
+
+       switch(PartsJumper){
+        
+  case 1: halfed = SetPart1/2;
+              half = halfed;
+               movedto =half; break;//Part 2
+     case 7: movedto =SetParts5-SetPart3; break;//Part 2
+     case 13: movedto =10; break;//Part 2
+     case 14: movedto =SetPart3-SetPart2; break;//Part 3
+     case 16: movedto =SetPart4-SetPart2; break;//Part 1
+     case 18: movedto =120; break;//Part 2
+     case 19: movedto =SetPart3-SetPart1; break;//Part 4
+     case 21: halfed = SetPart2/2;
+              half = halfed;
+               movedto =half; break;//Part 3
+     case 24: halfed = SetPart1/2;
+              half = halfed;
+               movedto =half; break;//Part 2
+     case 28: halfed = SetPart2/2;
+              half = halfed;
+               movedto =half;; break;//Part 3
+     case 29: movedto =SetPart5-SetPart3; break;// move to 0
+     case 32: halfed = SetPart3/2;
+              half = halfed;
+               movedto =half; break;//Part 2
+
+     case 37: 
+             halfed = SetPart1/2;
+              half = halfed;
+               movedto =half;
+     
+     break;//Part 2
+     default : 
+ 
+      while(run){
+       int BrRolled = (rand()%SetPart5)+1;
+       GOdown = Placedd-BrRolled; 
+
+       if(GOdown<0){
+//continue the loop
+
+       }
+       else{
+        movedto = GOdown;
+        break;
+       }
+
+     }
+     break;
+    }
+     
+     
+     }
+     else if(cr>0){
+       
+       crRolled = (rand()%SetPart2)+1; 
+       std::cout<<"||\tYou are stack on step: "<<Placedd<< " for: "<<crRolled<<" turn/s."<<'\n';
+
+     }
+
+  }
+    
+    
+    
+   // 321-400
+   else if(Placedd <=SetPart5){
+
+  int arRolled = (rand()%SetPart1)+1;
+     if(ar>0){
+    
+        while(run){
+      
+       GOdown = Placedd-arRolled; 
+
+       if(GOdown>set_steps){
+//continue the loop
+
+       }
+       else{
+        movedto = GOdown;
+        break;
+       }
+
+     } 
+    
+
+     }
+     else if(br>0){
+      double halfed = 0;
+      int half = 0;
+
+       switch(PartsJumper){
+        
+  case 2: halfed = SetPart1/2;
+              half = halfed;
+               movedto =half; break;//Part 2
+     case 4: movedto =SetParts5-SetPart1; break;//Part 2
+     case 11: movedto =SetPart4-SetPart2; break;//Part 1
+     case 15: movedto =10; break;//Part 2
+     case 17: movedto =SetPart3-SetPart1; break;//Part 3
+     case 19: movedto =SetPart3-SetPart1; break;//Part 4
+     case 21: halfed = SetPart2/2;
+              half = halfed;
+               movedto =half; break;//Part 3
+     case 24: halfed = SetPart3/2;
+              half = halfed;
+               movedto =half; break;//Part 2
+     case 28: halfed = SetPart1/2;
+              half = halfed;
+               movedto =half;; break;//Part 3
+     case 29: movedto =SetPart5-SetPart3; break;// move to 0
+     case 32: halfed = SetPart1/2;
+              half = halfed;
+               movedto =half; break;//Part 2
+
+     case 37: 
+             halfed = SetPart2/2;
+              half = halfed;
+               movedto =half;
+     
+     break;//Part 2
+     default : 
+ 
+      while(run){
+       int BrRolled = (rand()%SetPart5)+1;
+       GOdown = Placedd-BrRolled; 
+
+       if(GOdown<0){
+//continue the loop
+
+       }
+       else{
+        movedto = GOdown;
+        break;
+       }
+
+     }
+     break;
+    }
+     
+     }
+     else if(cr>0){
+       
+       crRolled = (rand()%SetPart5)+1; 
+       std::cout<<"||\tYou are stack on step: "<<Placedd<< " for: "<<crRolled<<" turn/s."<<'\n';
+
+     }
+
+   }
+
+
+
+
+return movedto;
              }
