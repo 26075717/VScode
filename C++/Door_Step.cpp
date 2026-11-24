@@ -843,7 +843,7 @@ std:: cout<<"||\tOH...nothing is here...\n";
               std::cout<<"**********************************|       |************************************"<<'\n';
               std::cout<<"**********************************|       |************************************"<<'\n';
               std::cout<<"||                                                                           ||"<<'\n';
-              std::cout <<"||\t\t\t\t  You win "<<'\n';
+              std::cout<<"||                                 You win "<<'\n';
               std::cout<<"||                                                                           ||"<<'\n';
               std::cout<<"__________________________________|       |____________________________________"<<'\n'; 
               std::cout<<"**********************************|       |************************************"<<'\n';
@@ -859,10 +859,11 @@ else if(Placed>setlevel){
   std::cout<<"||\tMoving by rolled amount will exceed set step."<<'\n';
   std::cout<<"||                                                                           ||"<<'\n';
   std::cout<<"||\tYou may need to roll again."<<'\n';
+  std::cout<<"||\t ";
   std::getline(std::cin>>std::ws,choice);
   std::cout<<"||                                                                           ||"<<'\n';
   std::cout<<"**********************************|       |************************************"<<'\n';
-  Placed =Placed-rolled;
+  Placed = newplayerPosition;
 
 
 }
@@ -1007,7 +1008,7 @@ do{
             if(playerRolls == enter){
                 std::cout <<"||\tYou have rolled: "<< enter<<" and entered the game"<<'\n';
            //change here
-                playerPosition =399;
+                playerPosition =0;
 //PUT IT HERE
                //  playerPosition = Tunnel_Trap( playerPosition);
                 newplayerPosition = 0;
