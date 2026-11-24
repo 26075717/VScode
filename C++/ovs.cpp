@@ -205,7 +205,7 @@ break;
     //161-240
     else if(Placedd <=SetPart3){
 
-  int arRolled = (rand()%SetPart3)+1;
+  int arRolled = (rand()%SetPart2)+1;
      if(ar>0){
        //PartsJumper
     switch(PartsJumper){
@@ -380,10 +380,10 @@ break;
    // 321-400
    else if(Placedd <=SetPart5){
 
-  int arRolled = (rand()%SetPart1)+1;
      if(ar>0){
-    
-        while(run){
+       
+       while(run){
+          int arRolled = (rand()%SetPart1)+1;
       
        GOdown = Placedd+arRolled; 
 
@@ -785,9 +785,12 @@ std:: cout<<"||\tOH...nothing is here...\n";
            
      set_steps = 400;
            int op =0;
-           double dr = set_steps*(15/100);
-           int frs = dr; 
-           trapBeingsat = (rand()%15)+1;
+           double dr = 0;
+           dr = 0.05*set_steps;
+        
+           int frs = dr;
+           trapBeingsat = (rand()%frs)+1;
+           std::cout<<frs<<'\n'; 
            std::cout<<"**********************************|       |************************************"<<'\n';
            
        
